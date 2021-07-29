@@ -1,7 +1,10 @@
 Modelo\Peticiones.class
 com\company\democrud\App.class
+Controlador\ListadoCompanyController.class
+Controlador\InsercionCompanyController.class
+Controlador\PrincipalControlador.class
 Modelo\CEOCompany.class
 Modelo\Company.class
-com\company\democrud\PrincipalControlador$1.class
-com\company\democrud\PrincipalControlador.class
+Controlador\ListadoCompanyController$1.class
+Controlador\ListadoCompanyController$2.class
 Modelo\AddressCompany.class

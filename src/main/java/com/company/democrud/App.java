@@ -17,10 +17,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Principal"), 900, 650);
+        scene = new Scene(loadFXML("Principal"), 950, 650);
         stage.setScene(scene);
-        stage.setMinHeight(400);
-        stage.setMinWidth(600);
+        stage.setMinHeight(450);
+        stage.setMinWidth(650);
         stage.setTitle("API REST");
         stage.show();
     }
