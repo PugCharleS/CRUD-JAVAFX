@@ -55,12 +55,12 @@ public class ListadoCompanyController implements Initializable {
         Response res = Peticiones.doGetRequest("http://localhost:3000/company");
         tvLista.getItems().removeAll(data);
         ObjectMapper mapper = new ObjectMapper();
-//        System.out.println("\t __^__                          __^__\n" +
-//                           "\t( ___ )------------------------( ___ )\n" +
-//                           "\t | / |                          | / |\n" +
-//                           "\t | / |     Conexion Exitosa!    | / |\n" +
-//                           "\t |___|                          |___|\n" +
-//                           "\t(_____)------------------------(_____)");   
+        System.out.println("\t __^__                          __^__\n" +
+                           "\t( ___ )------------------------( ___ )\n" +
+                           "\t | / |                          | / |\n" +
+                           "\t | / |     Conexion Exitosa!    | / |\n" +
+                           "\t |___|                          |___|\n" +
+                           "\t(_____)------------------------(_____)");   
         try {
             ArrayList<Company> listCompanys  = mapper.readValue(res.asString(), new TypeReference<ArrayList<Company>>(){});
             

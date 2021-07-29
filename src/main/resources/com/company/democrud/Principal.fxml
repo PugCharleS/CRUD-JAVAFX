@@ -20,25 +20,67 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <VBox fx:id="vbUno" alignment="TOP_CENTER" prefHeight="400.0" prefWidth="339.0" spacing="20.0" style="-fx-background-color: #3594BF;" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagenes/image..jpg" />
-               </image>
-            </ImageView>
-         </children>
+      <VBox fx:id="vbUno" alignment="TOP_CENTER" prefHeight="400.0" prefWidth="339.0" spacing="10.0" style="-fx-background-color: #0C3F56;" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
-      </VBox>
-      <VBox fx:id="vbDos" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
          <children>
-            <Button fx:id="btnMenuLista" mnemonicParsing="false" onAction="#EventosMenu" text="Listado de Compañias" />
-            <Button fx:id="btnMenuInsercion" layoutX="134.0" layoutY="10.0" mnemonicParsing="false" onAction="#EventosMenu" text="Inserción de Datos" />
+            <ImageView fitHeight="40.0" fitWidth="200.0">
+               <image>
+                  <Image url="/Imagenes/website_logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label text="Programmers" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="74.0" layoutY="297.0" text="Aldhair Guadalupe Hernandez" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="260.0" text="Bryan Oswaldo Torres" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Carlos Manuel Solis Torres" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="55.0" layoutY="176.0" text="Eduardo Manuel Garza Sanchez" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="223.0" text="Mauricio Perez Sanchez" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox fx:id="vbDos" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #ddd;" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="btnMenuLista" mnemonicParsing="false" onAction="#EventosMenu" prefWidth="230.0" text="Listado de Compañias">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <Button fx:id="btnMenuInsercion" layoutX="134.0" layoutY="10.0" mnemonicParsing="false" onAction="#EventosMenu" prefWidth="230.0" text="Inserción de Datos">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
          </children>
          <GridPane.margin>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            <Insets />
          </GridPane.margin>
       </VBox>
       <StackPane fx:id="spContenedor" prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
