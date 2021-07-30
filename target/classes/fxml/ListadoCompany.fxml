@@ -8,9 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" spacing="20.0" style="-fx-background-color: #0C3F56;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ListadoCompanyController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" spacing="20.0" style="-fx-background-color: #1c252c;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ListadoCompanyController">
    <children>
-      <TableView fx:id="tvLista" prefHeight="585.0" prefWidth="910.0" style="-fx-background-color: #dddddd;" />
+      <TableView fx:id="tvLista" prefHeight="585.0" prefWidth="910.0" style="-fx-background-color: #dddddd; -fx-text-align: center;" />
       <HBox alignment="CENTER" prefHeight="31.0" prefWidth="910.0" spacing="40.0">
          <children>
             <Button fx:id="btnLista" mnemonicParsing="false" onAction="#CargarLista" prefWidth="200.0" text="Cargar Informacion">

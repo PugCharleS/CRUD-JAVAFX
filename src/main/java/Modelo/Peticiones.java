@@ -58,7 +58,5 @@ public class Peticiones {
                 .put(uri)
                 .then()
                 .extract().response();
-    }
-    
-
+    }   
 }

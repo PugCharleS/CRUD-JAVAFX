@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -38,15 +38,10 @@ import javafx.util.Callback;
 public class PrincipalControlador implements Initializable{
 
     @FXML private Button btnMenuLista, btnMenuInsercion;
-    
     @FXML private StackPane spContenedor;
-    
     @FXML private VBox vbUno, vbDos;
-    
     private VBox vbListado, vbInsercion;
-    
     ListadoCompanyController controladorListado;
-    
     InsercionCompanyController controladorInsercion;
     
     @FXML public void EventosMenu(ActionEvent event) throws IOException{

@@ -125,6 +125,15 @@ public class ListadoCompanyController implements Initializable {
         colTel.setCellValueFactory(new PropertyValueFactory<>("phone"));  
         colCeo.setCellValueFactory(new PropertyValueFactory<>("ceoCompany"));  
         
+        colId.setMaxWidth(45);
+        colId.setMinWidth(45);
+        colTel.setMaxWidth(150);
+        colTel.setMinWidth(150);
+        colDir.setMaxWidth(320);
+        colDir.setMinWidth(300);
+        colNombre.setMaxWidth(215);
+        colNombre.setMinWidth(215);
+        
         //añade columnas al tableview
         tvLista.getColumns().addAll(colId); 
         tvLista.getColumns().addAll(colNombre);         

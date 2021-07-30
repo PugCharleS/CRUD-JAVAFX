@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #0C3F56;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.InsercionCompanyController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #1c252c;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.InsercionCompanyController">
    <children>
       <Label text="DATOS DE LA COMPAÑIA" textFill="WHITE">
          <font>
@@ -34,8 +34,14 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <TextField fx:id="txtNombre" GridPane.columnIndex="1" />
-            <TextField fx:id="txtTel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtNombre" promptText="Inserte Texto..." style="-fx-background-color: #eee;" GridPane.columnIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
+            <TextField fx:id="txtTel" promptText="Inserte Texto..." style="-fx-background-color: #eee;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -60,8 +66,14 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <TextField fx:id="txtEstado" GridPane.columnIndex="1" />
-            <TextField fx:id="txtCiudad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtEstado" promptText="Inserte Texto..." style="-fx-background-color: #eee;" GridPane.columnIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
+            <TextField fx:id="txtCiudad" promptText="Inserte Texto..." style="-fx-background-color: #eee;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
             <Label text="Calle" textFill="WHITE" GridPane.rowIndex="2">
                <font>
                   <Font size="16.0" />
@@ -74,9 +86,18 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <TextField fx:id="txtCalle" layoutX="98.0" layoutY="68.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtCP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="txtNum" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtCalle" layoutX="98.0" layoutY="68.0" promptText="Inserte Texto..." style="-fx-background-color: #eee;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
+            <TextField fx:id="txtCP" promptText="Inserte Texto..." style="-fx-background-color: #eee;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
+            <TextField fx:id="txtNum" promptText="Inserte Texto..." style="-fx-background-color: #eee;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
          </children>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
@@ -112,8 +133,14 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <TextField fx:id="txtNombreCeo" GridPane.columnIndex="1" />
-            <TextField fx:id="txtTelCeo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtNombreCeo" promptText="Inserte Texto..." style="-fx-background-color: #eee;" GridPane.columnIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
+            <TextField fx:id="txtTelCeo" promptText="Inserte Texto..." style="-fx-background-color: #eee;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
          </children>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
