@@ -8,7 +8,7 @@ package Controlador;
 import Modelo.CEOCompany;
 import Modelo.Company;
 import Modelo.Peticiones;
-import com.company.democrud.App;
+import Main.App;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.response.Response;
@@ -65,13 +65,13 @@ public class PrincipalControlador implements Initializable{
         spContenedor.setManaged(false);
         
         try {
-            FXMLLoader loader = CargarInterfaz("/fxml/ListadoCompany.fxml");
+            FXMLLoader loader = CargarInterfaz("/Vistas/ListadoCompany.fxml");
             vbListado = (VBox)loader.load();
             controladorListado = loader.getController();
             controladorListado.PrincipalControlador(this);
             vbListado.setVisible(false);
                  
-            FXMLLoader loader1 = CargarInterfaz("/fxml/InsercionCompany.fxml");
+            FXMLLoader loader1 = CargarInterfaz("/Vistas/InsercionCompany.fxml");
             vbInsercion = (VBox)loader1.load();
             controladorInsercion = loader1.getController();
             controladorInsercion.PrincipalControlador(this);

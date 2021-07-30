@@ -57,6 +57,8 @@ public class InsercionCompanyController implements Initializable {
     private Button btnInicio;
     
     PrincipalControlador principal;
+    int id;
+
     
     
     /**
@@ -95,21 +97,31 @@ public class InsercionCompanyController implements Initializable {
                 company.setAddressCompany(address);
                 company.setCeoCompany(ceo);
 
-
-                ObjectMapper mapper = new ObjectMapper();
-                String json;
+                
+                 ObjectMapper mapper = new ObjectMapper();
+                 String json;
+                 Response response;
                  try {
-                     json = mapper.writeValueAsString(company);
-                     Response response = doPostRequest(json, "http://localhost:3000/company");
+                     if(btnCargar.getText().equals("MODIFICAR")){
+                        company.setId(id);
+                        json = mapper.writeValueAsString(company);
+                        response = Peticiones.doPutRequest(json, "http://localhost:3000/company/"+id);
+                        System.out.println("MODIFICAR");
+                     } else{
+                        json = mapper.writeValueAsString(company);
+                        response = doPostRequest(json, "http://localhost:3000/company");
+                        System.out.println("CARGAR");
+                     }
                      if (response.getStatusCode() >= 200 && response.getStatusCode() <= 299) {
                          JOptionPane.showMessageDialog(null, "Operacion Exitosa " + response.getStatusLine());
                          LimpiarCampos();
+                         principal.controladorListado.RefrescarTabla();
                      } else {
                          System.out.println("Error: no hay respuesta");
                      }
                  } catch (JsonProcessingException ex) {
                      Logger.getLogger(Peticiones.class.getName()).log(Level.SEVERE, null, ex);
-                 }
+                 }       
             } else {
                 JOptionPane.showMessageDialog(null, "Los campos no están completos");
             }
@@ -120,16 +132,34 @@ public class InsercionCompanyController implements Initializable {
         }
     }   
     
+    public void ModificarCampos(Company company){
+        id = company.getId();
+        
+        txtNombre.setText(company.getName());
+        txtTel.setText(company.getPhone());
+        txtCiudad.setText(company.getAddressCompany().getCity());
+        txtEstado.setText(company.getAddressCompany().getState());
+        txtNum.setText(String.valueOf(company.getAddressCompany().getNumber()));
+        txtCalle.setText(company.getAddressCompany().getStreet());
+        txtCP.setText(company.getAddressCompany().getZipcode());
+        txtNombreCeo.setText(company.getCeoCompany().getName());
+        txtTelCeo.setText(company.getCeoCompany().getPhone());
+        
+        btnCargar.setText("MODIFICAR");
+    }
+    
     public void LimpiarCampos(){
-            txtNombre.setText("");
-            txtTel.setText("");
-            txtCiudad.setText("");
-            txtEstado.setText("");
-            txtNum.setText("");
-            txtCalle.setText("");
-            txtCP.setText("");
-            txtNombreCeo.setText("");
-            txtTelCeo.setText("");
+        txtNombre.setText("");
+        txtTel.setText("");
+        txtCiudad.setText("");
+        txtEstado.setText("");
+        txtNum.setText("");
+        txtCalle.setText("");
+        txtCP.setText("");
+        txtNombreCeo.setText("");
+        txtTelCeo.setText("");
+        btnCargar.setText("GUARDAR");
+        id = -1;
     }
     
 }

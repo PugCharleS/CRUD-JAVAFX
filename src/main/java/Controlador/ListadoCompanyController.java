@@ -40,7 +40,7 @@ public class ListadoCompanyController implements Initializable {
     
     @FXML private Button btnLista, btnInicio;
     
-    @FXML private TableView<Company> tvLista;
+    @FXML public TableView<Company> tvLista;
     private ObservableList<Company> data;
     
     private MenuItem miModificar, miEliminar;
@@ -52,30 +52,7 @@ public class ListadoCompanyController implements Initializable {
     }
     
     @FXML public void CargarLista(ActionEvent event){
-        Response res = Peticiones.doGetRequest("http://localhost:3000/company");
-        tvLista.getItems().removeAll(data);
-        ObjectMapper mapper = new ObjectMapper();
-        System.out.println("\t __^__                          __^__\n" +
-                           "\t( ___ )------------------------( ___ )\n" +
-                           "\t | / |                          | / |\n" +
-                           "\t | / |     Conexion Exitosa!    | / |\n" +
-                           "\t |___|                          |___|\n" +
-                           "\t(_____)------------------------(_____)");   
-        try {
-            ArrayList<Company> listCompanys  = mapper.readValue(res.asString(), new TypeReference<ArrayList<Company>>(){});
-            
-            if (listCompanys.size()>0) {
-                for (int i = 0; i < listCompanys.size(); i++) {
-//                    listCompanys.get(i).setCeo(listCompanys.get(i).getCeoCompany().toString());
-                    data.add(listCompanys.get(i));
-//                    System.out.println(data.get(i).getCeoCompany());                      
-                }             
-            }else{
-                System.out.println("Error: no hay informacion");
-            }             
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        }       
+        RefrescarTabla();
     }
     
     @FXML public void CargarInicio(ActionEvent event){
@@ -169,9 +146,40 @@ public class ListadoCompanyController implements Initializable {
         });
         
         miModificar.setOnAction((event) -> {
-            
+            if(tvLista.getSelectionModel().getSelectedIndex() >= 0){
+                cmOpciones.hide();
+                Company company = tvLista.getSelectionModel().getSelectedItem();
+                principal.CargarVista("Insercion");
+                principal.controladorInsercion.ModificarCampos(company);
+            }
         });
-        
-    }   
+          
+    }  
     
+    public void RefrescarTabla(){
+        Response res = Peticiones.doGetRequest("http://localhost:3000/company");
+        tvLista.getItems().removeAll(data);
+        ObjectMapper mapper = new ObjectMapper();
+        System.out.println("\t __^__                          __^__\n" +
+                           "\t( ___ )------------------------( ___ )\n" +
+                           "\t | / |                          | / |\n" +
+                           "\t | / |     Conexion Exitosa!    | / |\n" +
+                           "\t |___|                          |___|\n" +
+                           "\t(_____)------------------------(_____)");   
+        try {
+            ArrayList<Company> listCompanys  = mapper.readValue(res.asString(), new TypeReference<ArrayList<Company>>(){});
+            
+            if (listCompanys.size()>0) {
+                for (int i = 0; i < listCompanys.size(); i++) {
+//                    listCompanys.get(i).setCeo(listCompanys.get(i).getCeoCompany().toString());
+                    data.add(listCompanys.get(i));
+//                    System.out.println(data.get(i).getCeoCompany());                      
+                }             
+            }else{
+                System.out.println("Error: no hay informacion");
+            }             
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }  
 }

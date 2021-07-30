@@ -1,6 +1,6 @@
 Modelo\Peticiones.class
-com\company\democrud\App.class
 Controlador\ListadoCompanyController.class
+Main\App.class
 Controlador\InsercionCompanyController.class
 Controlador\PrincipalControlador.class
 Modelo\CEOCompany.class
