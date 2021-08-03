@@ -42,6 +42,6 @@ public class CEOCompany {
 
     @Override
     public String toString() {
-        return name + ", \nPhone=" + phone;
+        return "[" + name + ", \nPhone = " + phone + "]";
     } 
 }

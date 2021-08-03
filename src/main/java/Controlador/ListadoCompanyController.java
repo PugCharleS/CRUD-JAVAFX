@@ -102,6 +102,7 @@ public class ListadoCompanyController implements Initializable {
         colTel.setCellValueFactory(new PropertyValueFactory<>("phone"));  
         colCeo.setCellValueFactory(new PropertyValueFactory<>("ceoCompany"));  
         
+//        Tamano de columnas en tabla predefinidos
         colId.setMaxWidth(45);
         colId.setMinWidth(45);
         colTel.setMaxWidth(150);

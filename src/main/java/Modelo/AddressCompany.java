@@ -76,6 +76,10 @@ public class AddressCompany {
     @Override
     public String toString() {
 //      return "AddressCompany{" + "state=" + state + ", city=" + city + ", street=" + street + ", zipcode=" + zipcode + ", number=" + number + '}';
-        return state + ", " + city + ", " + street + ", " + number + "\n C.P.:" + zipcode;
+        return "[" + state + ", " + city + ", " + street + ", " + number + "\n C.P.:" + zipcode + "]";
     }   
+
+    void setPhone(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
