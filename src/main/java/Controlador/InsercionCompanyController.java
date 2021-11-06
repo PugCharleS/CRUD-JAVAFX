@@ -97,9 +97,11 @@ public class InsercionCompanyController implements Initializable {
                 company.setAddressCompany(address);
                 company.setCeoCompany(ceo);
 
-                
+//                Aqui construyo mi mapper
                  ObjectMapper mapper = new ObjectMapper();
+//                 Este es el string que llamo json para poder usarlo para mi payload
                  String json;
+//                 Esta es la respueta
                  Response response;
                  try {
                      if(btnCargar.getText().equals("MODIFICAR")){
@@ -108,10 +110,14 @@ public class InsercionCompanyController implements Initializable {
                         response = Peticiones.doPutRequest(json, "http://localhost:3000/company/"+id);
                         System.out.println("MODIFICAR");
                      } else{
+//                       Aqui mapeo mi string de los valores que traigo de company
                         json = mapper.writeValueAsString(company);
+//                        Aqui mando mi payload hacia ese metodo que esta en peticiones.java, le pones el string que mandas como primer parametro y el segundo es tu API
                         response = doPostRequest(json, "http://localhost:3000/company");
+//                        Esto solo es un mensaje para mi de decoracions
                         System.out.println("CARGAR");
                      }
+//                     Todo esto es mera decoracion
                      if (response.getStatusCode() >= 200 && response.getStatusCode() <= 299) {
                          JOptionPane.showMessageDialog(null, "Operacion Exitosa " + response.getStatusLine());
                          LimpiarCampos();
